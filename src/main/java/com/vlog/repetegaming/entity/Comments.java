@@ -1,6 +1,6 @@
 package com.vlog.repetegaming.entity;
 
-import java.sql.Date;
+//import java.sql.Date;
 
 import org.hibernate.annotations.GenericGenerator;
 
@@ -28,6 +28,6 @@ public class Comments {
 
     private String body;
 
-    private Date datePosted;
+    //private Date datePosted;
 
 }
