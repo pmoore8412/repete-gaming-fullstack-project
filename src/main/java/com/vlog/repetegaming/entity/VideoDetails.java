@@ -2,9 +2,12 @@ package com.vlog.repetegaming.entity;
 
 import org.hibernate.annotations.GenericGenerator;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,12 +25,20 @@ public class VideoDetails {
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String id;
 
+    @Column
     private String title;
 
+    @Column
     private String description;
 
+    @Column
     private String url;
 
+    @Column
     private String tumbnailUrl;
+
+    @OneToMany
+    @JoinColumn(name = "comments_id")
+    private Comments comments;
 
 }
