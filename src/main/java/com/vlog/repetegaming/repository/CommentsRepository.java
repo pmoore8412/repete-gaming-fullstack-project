@@ -7,5 +7,7 @@ import com.vlog.repetegaming.entity.Comments;
 
 @Repository
 public interface CommentsRepository extends JpaRepository<Comments, String> {
+
+    Comments findByVideoId(String videoId);
     
 }

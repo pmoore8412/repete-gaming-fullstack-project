@@ -1,7 +1,9 @@
 package com.vlog.repetegaming.service.comments;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import com.vlog.repetegaming.entity.Comments;
 import com.vlog.repetegaming.repository.CommentsRepository;
@@ -26,8 +28,11 @@ public class CommentsServiceImpl implements CommentsService {
 
     @Override
     public void removeComment(String id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'removeComment'");
+
+        Comments comment = commentsRepository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "No comment found with id of: " + id));
+
+        commentsRepository.delete(comment);
+        
     }
 
     

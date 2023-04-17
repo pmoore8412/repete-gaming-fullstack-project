@@ -10,6 +10,8 @@ public interface VideoDetailsService {
 
     List<VideoDetails> getAllVideos();
 
+    VideoDetails getVideo(String id);
+
     void removeVideo(String id);
     
 }

@@ -31,6 +31,9 @@ public class Comments {
     @Column
     private String body;
 
+    @Column
+    private String videoId;
+
     //private Date datePosted;
 
 }
